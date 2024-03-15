@@ -1,15 +1,16 @@
 import { NavLink } from "react-router-dom";
+import "../assets/styles/Home.css";
 
 const Home = () => {
   return (
-    <div className="container p-30 d-flex jcc aic flex-column">
-      <h1 className="tac">Welcome to Steem</h1>
-      <h3 className="tac">Start shopping</h3>
-      <button>
-        <NavLink to="/games" className="games">
-          Games
+    <div className="landing-page">
+      <div className="content">
+        <h1>Welcome to Steem</h1>
+        <p>Where play meets passion.</p>
+        <NavLink to={"/games"}>
+          <button className="cta-button">Get Started</button>
         </NavLink>
-      </button>
+      </div>
     </div>
   );
 };

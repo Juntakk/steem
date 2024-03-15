@@ -9,16 +9,28 @@
 }
 
 .choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
   margin-top: 1rem;
 }
 
 span {
   margin-right: 2rem;
+  text-align: center;
 }
 
 .logout {
   font-size: 1.5rem;
   margin-top: 1.5rem;
   margin-left: 20px;
+}
+
+.active {
+  color: rgb(35, 35, 132);
+  font-weight: bold;
+}
+.inActive {
+  color: var(--tertiary-color);
 }
