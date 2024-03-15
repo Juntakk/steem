@@ -1,9 +1,9 @@
+import Home from "./components/Home";
 import Header from "./components/Header";
 import Content from "./components/Content";
 // import Footer from "./components/Footer";
 import styles from "./assets/styles/App.module.scss";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
 import GameDetails from "./components/GameDetails";
 import WishList from "./components/WishList";
 import Login from "./components/Login";

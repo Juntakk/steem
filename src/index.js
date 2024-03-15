@@ -4,7 +4,6 @@ import App from "./App.jsx";
 import "./assets/styles/index.scss";
 import { BrowserRouter } from "react-router-dom";
 
-// eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
