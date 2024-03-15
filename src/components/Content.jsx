@@ -40,22 +40,25 @@ const Content = () => {
         />
         <CategoryDropdown onCategoryChange={handleSelectedCat} />
       </div>
-      <div className={styles.contentCard}>
-        <h1 className={styles.h1}>
+      <div className="">
+        <h1 className="">
           {selectedCat[0].toUpperCase() + selectedCat.substring(1)}
         </h1>
-        <div className={styles.grid}>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {filteredGames.length > 0 ? (
             filteredGames.map((item) => (
               <Product
                 key={item.id}
-                contenu={item.name}
+                name={item.name}
                 image={item.image}
                 id={item.id}
+                price={item.price}
+                rating={item.rating}
               />
             ))
           ) : (
-            <p className={styles.p}>No results found.</p>
+            <p className="">No results found.</p>
           )}
         </div>
       </div>

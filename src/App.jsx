@@ -8,6 +8,7 @@ import GameDetails from "./components/GameDetails";
 import WishList from "./components/WishList";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
+import "./index.css";
 
 function App() {
   return (

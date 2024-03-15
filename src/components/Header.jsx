@@ -1,46 +1,33 @@
-import { NavLink, Link } from "react-router-dom";
-import styles from "../assets/styles/Navbar.module.scss";
+import { NavLink } from "react-router-dom";
 import { LuGamepad2 } from "react-icons/lu";
 
 const Header = () => {
-  const activeClass = styles.active;
-  const inActiveClass = styles.inActive;
   return (
-    <nav className={`${styles.navbar} d-flex flex-row jcsb`}>
-      <div className={`${styles.logo}`}>
-        <Link to={"/"}>
-          Steem
-          <LuGamepad2 />
-        </Link>
-      </div>
-      <div className={`${styles.choices}`}>
-        <NavLink
-          to={"/"}
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
-          end
-        >
-          <span>Home</span>
-        </NavLink>
-        <NavLink
-          to={"/games"}
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
-        >
-          <span>Store</span>
-        </NavLink>
-      </div>
-      <div className={`${styles.logout}`}>
-        <NavLink
-          to={"/wishlist"}
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
-        >
-          <span>WishList</span>
-          {/* {nbOfWishedItems} */}
-        </NavLink>
-        <NavLink
-          to={"/login"}
-          className={({ isActive }) => (isActive ? activeClass : inActiveClass)}
-        >
-          <span>Login</span>
+    <nav className="bg-blue-900 border-gray-200 dark:bg-gray-900">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
+        <NavLink to={"/"} className="flex">
+          <LuGamepad2 size={65} />
+          <span className="mt-10 text-4xl mx-3">Steem</span>
+        </NavLink>{" "}
+        <ul className="flex text-2xl justify-center">
+          <li>
+            <NavLink to={"/"} className="mx-10" end>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/games"} className="mx-10">
+              Store
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/wishlist"} className="mx-10">
+              Wishlist
+            </NavLink>
+          </li>
+        </ul>
+        <NavLink to={"/login"} className="text-xl mx-10">
+          Login
         </NavLink>
       </div>
     </nav>

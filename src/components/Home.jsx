@@ -8,7 +8,7 @@ const Home = () => {
         <h1>Welcome to Steem</h1>
         <p>Where play meets passion.</p>
         <NavLink to={"/games"}>
-          <button className="cta-button">Get Started</button>
+          <button className="cta-button">Go to Store</button>
         </NavLink>
       </div>
     </div>
