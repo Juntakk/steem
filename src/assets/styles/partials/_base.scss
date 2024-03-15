@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+input {
+  width: 300px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
