@@ -1,12 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
-import styles from "../assets/styles/Content.module.scss";
 import { NavLink } from "react-router-dom";
 
-const Product = ({ image, name, price, id }) => {
+export const Product = ({ image, name, price, id }) => {
   const [liked, setLiked] = useState(false);
 
   const handleLike = () => {
@@ -14,7 +11,7 @@ const Product = ({ image, name, price, id }) => {
   };
 
   return (
-    <div className="flex w-full max-w-sm bg-gray-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="flex w-full max-w-sm bg-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <NavLink to={`/games/${id}`} className="flex-none">
         <img className="max-w-40 h-64" src={image} alt="" />
       </NavLink>{" "}
@@ -39,5 +36,3 @@ const Product = ({ image, name, price, id }) => {
     </div>
   );
 };
-
-export default Product;

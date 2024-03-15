@@ -1,5 +1,3 @@
-const WishList = () => {
+export const WishList = () => {
   return <div>WishList</div>;
 };
-
-export default WishList;

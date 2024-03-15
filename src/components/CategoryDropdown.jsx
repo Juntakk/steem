@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import styles from "../assets/styles/Content.module.scss";
 
-const CategoryDropdown = ({ onCategoryChange }) => {
+export const CategoryDropdown = ({ onCategoryChange }) => {
   const [selectedCat, setSelectedCat] = useState("all");
 
   const handleSelectedCat = (e) => {
@@ -13,9 +12,9 @@ const CategoryDropdown = ({ onCategoryChange }) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-row">
       <select
-        className={styles.catDropDown}
+        className="w-auto bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded focus:outline-none focus:bg-white focus:border-gray-500"
         name="Categories"
         value={selectedCat}
         onChange={handleSelectedCat}
@@ -31,5 +30,3 @@ const CategoryDropdown = ({ onCategoryChange }) => {
     </div>
   );
 };
-
-export default CategoryDropdown;

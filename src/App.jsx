@@ -1,19 +1,19 @@
-import Home from "./components/Home";
-import Header from "./components/Header";
-import Content from "./components/Content";
-// import Footer from "./components/Footer";
-import styles from "./assets/styles/App.module.scss";
-import { Routes, Route } from "react-router-dom";
-import GameDetails from "./components/GameDetails";
-import WishList from "./components/WishList";
-import Login from "./components/Login";
-import NotFound from "./components/NotFound";
+import {
+  Header,
+  Home,
+  Content,
+  WishList,
+  Login,
+  GameDetails,
+  NotFound,
+} from "./components";
 import "./index.css";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <div className={`${styles.appContainer} `}>
+      <div className="app">
         <main>
           <Header />
           <Routes>
