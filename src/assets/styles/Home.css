@@ -1,6 +1,6 @@
 .landing-page {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   height: 86.5vh;
   background-image: url("/public/images/bg.jpg");
