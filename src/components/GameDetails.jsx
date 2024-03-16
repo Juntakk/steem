@@ -11,18 +11,18 @@ export const GameDetails = () => {
 
   return (
     <>
-      <div className="">
+      <div className="flex ms-40 py-20 px-20 border-4 rounded-md border-blue-900 mt-10 me-40 bg-gray-500">
         <div className="">
-          <div className="">
-            <img src={`${game.image}`} alt="" />
-          </div>
-          <div className="">
-            <h2>{game.name}</h2>
-            <p className="">{game.description}</p>
-            <div className="">
-              <p className="">{game.price}</p>
-              <button className="">Add to cart</button>
-            </div>
+          <img className="h-96 w-64" src={`${game.image}`} alt="" />
+        </div>
+        <div className="px-10 mt-10">
+          <h2 className="text-4xl">{game.name}</h2>
+          <p className="text-xl mt-5 max-w-lg">{game.description}</p>
+          <div className="flex mt-10">
+            <p className="text-4xl">{game.price}</p>
+            <button className="text-white ms-10 bg-blue-900 p-3 text-2xl">
+              Add to cart
+            </button>
           </div>
         </div>
       </div>

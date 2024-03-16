@@ -12,7 +12,7 @@ export const CategoryDropdown = ({ onCategoryChange }) => {
   };
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row mt-5">
       <select
         className="w-auto bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded focus:outline-none focus:bg-white focus:border-gray-500"
         name="Categories"
@@ -20,12 +20,12 @@ export const CategoryDropdown = ({ onCategoryChange }) => {
         onChange={handleSelectedCat}
       >
         <option value="all">All</option>
-        <option value="adventure">Adventure</option>
-        <option value="platformer">Platformer</option>
-        <option value="souls-like">Souls-like</option>
-        <option value="roguelike">Roguelike</option>
-        <option value="rpg">RPG</option>
-        <option value="horror">Horror</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Platformer">Platformer</option>
+        <option value="Souls-like">Souls-like</option>
+        <option value="Roguelike">Roguelike</option>
+        <option value="RPG">RPG</option>
+        <option value="Horror">Horror</option>
       </select>
     </div>
   );

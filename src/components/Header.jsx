@@ -23,6 +23,7 @@ export const Header = () => {
           <li>
             <NavLink to={"/wishlist"} className="mx-10">
               Wishlist
+              {/* {wishedItems} */}
             </NavLink>
           </li>
         </ul>
