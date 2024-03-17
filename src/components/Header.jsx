@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { LuGamepad2 } from "react-icons/lu";
 
-export const Header = () => {
+export const Header = ({ wishedItems }) => {
   return (
     <nav className="bg-blue-900 border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto text-white p-3 ">
@@ -21,9 +21,11 @@ export const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/wishlist"} className="mx-10">
+            <NavLink to={"/wishlist"} className="flex mx-10">
               Wishlist
-              {/* {wishedItems} */}
+              <span className="flex flex-end text-red-600 px-2 text-lg font-bold rounded">
+                {wishedItems}
+              </span>
             </NavLink>
           </li>
         </ul>

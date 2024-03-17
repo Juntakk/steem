@@ -36,9 +36,9 @@ export const WishList = ({ wishList, removeFromWishList }) => {
                       <td class="px-4 py-4">
                         <button
                           onClick={() => removeFromWishList(game.id)}
-                          class="font-medium text-red-600 dark:text-red-500 hover:underline"
+                          class="font-md text-2xl text-blue-900 dark:text-red-500 hover:text-red-600"
                         >
-                          Remove
+                          X
                         </button>
                       </td>
                     </tr>
