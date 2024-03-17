@@ -1,10 +1,7 @@
 import { useParams } from "react-router-dom";
 import data from "../data/data.js";
-// import { AiFillHeart } from "react-icons/ai";
-// import { AiOutlineHeart } from "react-icons/ai";
-// import Product from "./Product";
 
-export const GameDetails = () => {
+export const GameDetails = ({ addToWishList }) => {
   const games = data;
   const params = useParams();
   const game = games.find((item) => item.id.toString() === params.id);
@@ -20,8 +17,11 @@ export const GameDetails = () => {
           <p className="text-xl mt-5 max-w-lg">{game.description}</p>
           <div className="flex mt-10">
             <p className="text-4xl">{game.price}</p>
-            <button className="text-white ms-10 bg-blue-900 p-3 text-2xl">
-              Add to cart
+            <button
+              className="text-white ms-10 bg-blue-900 p-3 text-2xl hover:bg-blue-800"
+              onClick={() => addToWishList(game)}
+            >
+              Add to WishList
             </button>
           </div>
         </div>
