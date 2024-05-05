@@ -41,7 +41,7 @@ function App() {
   //Get games from DB
   useEffect(() => {
     axios
-      .get("http://localhost:5000/games")
+      .get(`https://steem-api.onrender.com/games`)
       .then((games) => setGames(games.data))
       .catch((err) => console.log(err));
   });
