@@ -42,9 +42,12 @@ function App() {
   useEffect(() => {
     axios
       .get(`https://steem-api.onrender.com/games`)
-      .then((games) => setGames(games.data))
+      .then((response) => {
+        setGames((prevGames) => [...prevGames, ...response.data]);
+      })
       .catch((err) => console.log(err));
-  }, [games]);
+  }, []);
+
   const addToWishList = (game) => {
     const gameIds = wishList.map((item) => item._id);
 
