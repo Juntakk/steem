@@ -1,0 +1,36 @@
+.notFoundPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFoundText {
+  color: #2a3449;
+  font-size: 4rem;
+  margin-top: 3rem;
+  font-style: italic;
+}
+
+.notFoundImage {
+  width: 18rem;
+  height: 18rem;
+  margin-top: 3rem;
+}
+
+.backToStoreButton {
+  display: flex;
+  background-color: #1a202c;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #4a5568;
+  }
+}

@@ -1,0 +1,25 @@
+.customSelect {
+  background-color: #2a3449;
+  color: #cbd5e0;
+  font-size: 1.2rem;
+  padding: 0.65rem;
+  border-radius: 0.2rem;
+  margin-top: 1.5rem;
+  outline: none;
+  cursor: pointer;
+  option {
+    padding: 1rem;
+  }
+}
+.catDropDown {
+  display: flex;
+  flex-direction: row;
+}
+
+.customSelect:focus {
+  background-color: #2a3449;
+}
+
+.customSelect:hover {
+  cursor: pointer;
+}

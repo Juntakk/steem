@@ -1,0 +1,42 @@
+.landingPage {
+  background-image: url("../../../../public/images/bg4.jpg");
+  background-size: cover;
+  height: 86.75vh;
+}
+
+.storeButton {
+  font-size: 1.2rem;
+  color: white;
+  background-color: #1a202c;
+  padding: 1rem 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  margin-left: 60px;
+  margin-top: 20px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #243754;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.content h1 {
+  font-size: 3rem;
+  margin-top: 120px;
+  color: whitesmoke;
+  margin-left: 60px;
+}
+
+.content p {
+  font-size: 1.6rem;
+  color: whitesmoke;
+  margin-left: 60px;
+}

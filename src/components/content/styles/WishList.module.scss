@@ -1,0 +1,87 @@
+.title {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #02091a;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.gameContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 2px solid black;
+}
+
+.gamesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #5e656f;
+  margin-inline: 500px;
+}
+
+.gamesContainer .image {
+  height: 120px;
+  width: 83px;
+  margin-left: 0;
+}
+.gamesContainer a {
+  height: 120px;
+}
+
+.price {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  color: black;
+  font-weight: bold;
+  font-family: monospace;
+}
+.name {
+  color: black;
+  font-size: 1.2rem;
+  width: 150px;
+  margin-left: 20px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.deleteBtn {
+  padding: 7px;
+  margin-right: 3px;
+  :hover {
+    color: rgb(19, 19, 185);
+    cursor: pointer;
+  }
+}
+
+.paymentButton {
+  background-color: #1a202c;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  margin-top: 1rem;
+  padding: 0.625rem 1.25rem;
+  margin-inline: 600px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.paymentButton:hover {
+  background-color: #3e4e7a;
+  cursor: pointer;
+}
+
+.noGamesMessage {
+  margin-top: 30px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}

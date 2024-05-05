@@ -1,0 +1,90 @@
+.flexContainer {
+  display: flex;
+  overflow: hidden;
+  background-color: #9b9c9e;
+  position: relative;
+  border-radius: 3px;
+  height: 16rem;
+}
+
+.image {
+  width: 12.5rem;
+  height: 18rem;
+  transition: transform 0.3s;
+}
+
+.link {
+  overflow: hidden;
+}
+.image:hover {
+  transform: scale(1.1);
+}
+
+.updateBtn {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  color: #1a202c;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.deleteBtn {
+  position: absolute;
+  top: 2rem;
+  right: 0.25rem;
+  color: #1a202c;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.updateBtn:hover,
+.deleteBtn:hover {
+  color: #1d4ed8;
+}
+
+.textContainer {
+  flex-grow: 1;
+  display: flex;
+  width: 20rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 2rem;
+  font-style: italic;
+  text-align: center;
+  padding: 0.75rem 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #1a202c;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  padding: 0.25rem;
+  color: #1a202c;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.addToWishListButton {
+  padding: 0.75rem;
+  background-color: #1a202c;
+  width: 100%;
+  color: #cbd5e0;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.addToWishListButton:hover {
+  background-color: #3e4e7a;
+  color: black;
+}
