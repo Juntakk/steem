@@ -86,9 +86,16 @@ export const Header = ({ wishedItems }) => {
                   Store
                 </NavLink>
               </li>
-              <NavLink to={"/login"} className={styles.loginRegister}>
-                Login
-              </NavLink>
+              <li>
+                <NavLink
+                  to={"/login"}
+                  className={`${styles.loginRegister} ${
+                    location.pathname === "/login" && styles.active
+                  }`}
+                >
+                  Login
+                </NavLink>
+              </li>
             </ul>
           </>
         )}

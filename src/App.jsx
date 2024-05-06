@@ -1,6 +1,6 @@
 import { Content } from "./components/content/Content";
 import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Register from "./components/auth/Register";
 import { Login } from "./components/auth/Login";
 import AddGame from "./components/admin/AddGame";
@@ -21,6 +21,7 @@ function App() {
   const [games, setGames] = useState([]);
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   //WishList storage
   useEffect(() => {
@@ -42,11 +43,16 @@ function App() {
   useEffect(() => {
     axios
       .get(`https://steem-api.onrender.com/games`)
-      .then((response) => {
-        setGames((prevGames) => [...prevGames, ...response.data]);
-      })
+      .then((games) => setGames(games.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [location]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5000/games`)
+  //     .then((games) => setGames(games.data))
+  //     .catch((err) => console.log(err));
+  // }, [location]);
 
   const addToWishList = (game) => {
     const gameIds = wishList.map((item) => item._id);
@@ -81,7 +87,7 @@ function App() {
             <Route path="/add-game" element={<AddGame />} />
             <Route
               path="games/update-game/:id"
-              element={<UpdateGame games={games} />}
+              element={<UpdateGame games={games} setGames={setGames} />}
             />
             <Route
               path="/games"

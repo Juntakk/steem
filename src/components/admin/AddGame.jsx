@@ -3,6 +3,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { createGame } from "../../apis/games";
 import styles from "./styles/AddGame.module.scss";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import CustomModal from "../extras/CustomModal";
 
 const AddGame = () => {
   const defaultValues = {
@@ -13,6 +16,9 @@ const AddGame = () => {
     rating: "",
     image: null,
   };
+  const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({ title: "" });
 
   const schema = yup.object({
     name: yup
@@ -42,7 +48,6 @@ const AddGame = () => {
     handleSubmit,
     register,
     setError,
-    reset,
     formState: { errors },
   } = useForm({ defaultValues, resolver: yupResolver(schema) });
 
@@ -50,11 +55,18 @@ const AddGame = () => {
     try {
       const response = await createGame(values);
       if (response) {
-        reset(defaultValues);
+        setModalOpen(true);
+        setModalContent({
+          title: `${values.name} added successfully`,
+        });
       }
     } catch (error) {
       setError("submit", { type: "generic", message: error.message });
     }
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+    navigate("/games");
   };
 
   return (
@@ -151,6 +163,11 @@ const AddGame = () => {
           Add Game
         </button>
       </form>
+      <CustomModal
+        onClose={closeModal}
+        isOpen={modalOpen}
+        title={modalContent.title}
+      />
     </div>
   );
 };

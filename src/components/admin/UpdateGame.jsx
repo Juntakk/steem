@@ -4,12 +4,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate, useParams } from "react-router-dom";
 import { updateGame } from "../../apis/games";
 import styles from "./styles/UpdateGame.module.scss";
+import CustomModal from "../extras/CustomModal";
+import { useState } from "react";
 
-const UpdateGame = ({ games }) => {
+const UpdateGame = ({ games, setGames }) => {
   const params = useParams();
   const gameId = params.id;
   const game = games.find((item) => item._id === gameId);
   const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({ title: "" });
 
   const defaultValues = {
     name: game ? game.name : "",
@@ -55,11 +59,18 @@ const UpdateGame = ({ games }) => {
     try {
       const response = await updateGame(values, game._id);
       if (response) {
-        navigate(`/games`);
+        setModalOpen(true);
+        setModalContent({
+          title: `${values.name} updated successfully`,
+        });
       }
     } catch (error) {
       setError("submit", { type: "generic", message: error.message });
     }
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+    navigate(`/games`);
   };
 
   return (
@@ -166,6 +177,12 @@ const UpdateGame = ({ games }) => {
               Update Game
             </button>
           </form>
+          <CustomModal
+            onClose={closeModal}
+            isOpen={modalOpen}
+            title={modalContent.title}
+            message={modalContent.message}
+          />
         </div>
       )}
     </>

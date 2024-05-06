@@ -53,7 +53,7 @@ export const Content = ({ games, setGames, addToWishList }) => {
                 />
               ))
             ) : (
-              <p className={styles.loadingText}>No results found</p>
+              <p className={styles.loadingText}>Loading...</p>
             )}
           </div>
         </div>
