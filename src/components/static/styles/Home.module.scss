@@ -1,12 +1,15 @@
 .landingPage {
-  background-image: url("../../../../public/images/bg4.jpg");
+  background-image: url("../../../../public/images/bg5.png");
   background-size: cover;
-  height: 86.75vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: calc(100vh - 91.59px);
 }
 
 .storeButton {
   font-size: 1.2rem;
-  color: white;
+  color: antiquewhite;
   background-color: #1a202c;
   padding: 1rem 1rem;
   font-weight: bold;
@@ -31,12 +34,12 @@
 .content h1 {
   font-size: 3rem;
   margin-top: 120px;
-  color: whitesmoke;
+  color: antiquewhite;
   margin-left: 60px;
 }
 
 .content p {
   font-size: 1.6rem;
-  color: whitesmoke;
+  color: antiquewhite;
   margin-left: 60px;
 }
