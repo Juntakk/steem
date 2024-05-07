@@ -1,90 +1,128 @@
 .navbar {
+  width: 100vw;
   background-color: #2a3449;
-  color: #ffffff;
-  padding: 0.8rem 1rem;
+  margin: 0;
+  margin-right: 0;
+  height: 3rem;
+}
+.navLink {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.navLink ul {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+a {
+  color: rgb(243, 186, 110);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+.navLink ul li {
+  margin-right: 70px;
 }
 
 .logo {
   text-decoration: none;
-  color: white;
+  font-size: 2.2rem;
+  position: absolute;
+  left: 20px;
+  color: rgb(214, 164, 99);
   display: flex;
-  margin-right: 14rem;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.spanNumber {
+  color: black;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 0.9rem;
+  margin-left: -67px;
+  margin-top: 0px;
 }
 
-.navLink {
-  margin-left: 1.5rem;
-  margin-right: 2.5rem;
+.logo span {
+  margin-left: 5px;
   display: flex;
-  color: #ffffff;
-}
-
-.navLink span {
-  margin-top: 0.75rem;
-  font-size: 2.4rem;
-}
-
-.navLink ul {
-  display: flex;
-  font-size: 1.75rem;
-  margin-left: 2.5rem;
-  justify-content: center;
   align-items: center;
 }
 
-.navLink ul li {
-  list-style: none;
-  margin-left: 10px;
-}
-.navLink ul li span {
-  font-size: 1.75rem;
-  margin-left: 3px;
-  color: rgb(32, 53, 212);
-}
-
-.navLink ul li a {
-  margin-left: 2rem;
-  margin-right: 1rem;
-  color: #ffffff;
+.logoutLink,
+.loginRegister {
+  position: absolute;
+  margin-top: 10px;
+  right: 20px;
   text-decoration: none;
-  font-family: monospace;
+  color: rgb(214, 164, 99);
 }
 
-.navLink ul li .active {
-  transform: scale(1.05);
-  color: #02091a;
-  font-weight: bold;
-}
-
-.navLink ul li a:hover {
-  transform: scale(1.05);
-  font-weight: bold;
-  color: #02091a;
-}
-
-.navLink .logoutLink {
-  margin-left: 21rem;
-  font-size: 1.3rem;
-  margin-top: 0.5rem;
-  color: white;
-  text-decoration: none;
-}
-
-.navLink .logoutLink:hover {
+.active {
   color: black;
 }
-.navLink .loginRegister {
-  margin-left: 21rem;
-  font-size: 1.5rem;
-  color: white;
+
+.loginRegister2 {
+  position: absolute;
+  right: 20px;
+  margin-top: 10px;
   text-decoration: none;
+  color: rgb(214, 164, 99);
 }
 
-.navLink .loginRegister:hover {
-  color: black;
+.navItem2 {
+  margin-inline: 30px;
+  margin-top: 10px;
 }
-.navLink .loginRegister .active {
-  color: black;
+
+@media screen and (max-width: 1000px) {
+  .navLink ul li {
+    margin-right: 30px;
+  }
+  .spanNumber {
+    margin-left: -27px;
+  }
+  ul {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .navLink ul li {
+    margin-top: 5px;
+  }
+  a {
+    font-size: 1rem;
+  }
+  .spanNumber {
+    margin-top: 5px;
+  }
+  .logoutLink,
+  .loginRegister {
+    font-size: 0.8rem;
+    margin-top: 7px;
+  }
+
+  ul {
+    margin-left: 90px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .navLink ul li,
+  .spanNumber {
+    display: none;
+  }
+  .logo,
+  .logoutLink,
+  .loginRegister {
+    margin-top: 30px;
+  }
 }
