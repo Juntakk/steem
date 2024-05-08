@@ -20,7 +20,7 @@ function App() {
   const [wishedItems, setWishedItems] = useState(0);
   const [games, setGames] = useState([]);
   const { isLoggedIn } = useAuth();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -43,7 +43,7 @@ function App() {
   //Get games from DB
   useEffect(() => {
     axios
-      .get(`https://steem-api.onrender.com/games`, setIsLoading(true))
+      .get(`https://steem-api.onrender.com/games`)
       .then((games) => setGames(games.data), setIsLoading(false))
       .catch((err) => console.log(err));
   }, [location]);
