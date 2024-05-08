@@ -1,5 +1,5 @@
 .navbar {
-  width: 100vw;
+  max-width: 100vw;
   background-color: #2a3449;
   margin: 0;
   margin-right: 0;
@@ -43,7 +43,7 @@ a:hover {
   margin-top: 10px;
 }
 .spanNumber {
-  color: black;
+  color: rgb(214, 164, 99);
   font-weight: bold;
   font-family: monospace;
   font-size: 0.9rem;

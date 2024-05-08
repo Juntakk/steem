@@ -56,7 +56,7 @@ export const Content = ({ games, setGames, addToWishList }) => {
             ) : (
               <div className={styles.loadingText}>
                 <p>Loading...</p>
-                <p>This while take about 30 seconds</p>
+                <p>This will take about 30 seconds</p>
                 <RingLoader color="#0a0129" size={100} />
               </div>
             )}

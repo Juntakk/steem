@@ -1,3 +1,23 @@
 html {
   font-size: 15px !important;
 }
+
+/* Targeting the scrollbar */
+::-webkit-scrollbar {
+  width: 12.5px; /* Width of the scrollbar */
+}
+
+/* Track (the area on which the thumb moves) */
+::-webkit-scrollbar-track {
+  background: rgb(195, 147, 84);
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #2a3449; /* Color of the thumb */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #275479; /* Color of the thumb on hover */
+}
