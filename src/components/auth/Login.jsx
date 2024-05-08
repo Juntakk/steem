@@ -44,6 +44,7 @@ export const Login = () => {
           <input
             type="text"
             id="email"
+            placeholder="Write anything"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={styles.input}
@@ -57,6 +58,7 @@ export const Login = () => {
           <input
             type="password"
             id="password"
+            placeholder="Write anything"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className={styles.input}

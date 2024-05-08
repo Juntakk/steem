@@ -30,7 +30,7 @@
 }
 
 .modal-body button {
-  background-color: white;
+  background-color: antiquewhite;
   padding: 10px;
   cursor: pointer;
   font-size: 15px;
@@ -44,4 +44,5 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.8rem;
   margin-bottom: 20px;
+  color: rgb(243, 186, 110);
 }

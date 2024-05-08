@@ -13,11 +13,11 @@ const Register = () => {
 
   const navigate = useNavigate();
   const schema = yup.object({
-    name: yup.string().min(3, "Name too short").required("Name is required"),
-    email: yup.string().min(3, "Email too short").required("Email is required"),
+    name: yup.string().min(1, "Name too short").required("Name is required"),
+    email: yup.string().min(1, "Email too short").required("Email is required"),
     password: yup
       .string()
-      .min(6, "Password too short")
+      .min(1, "Password too short")
       .required("Password required"),
   });
 
@@ -51,6 +51,7 @@ const Register = () => {
             Full name
           </label>
           <input
+            placeholder="Write anything"
             type="name"
             id="name"
             className={styles.input}
@@ -67,6 +68,7 @@ const Register = () => {
           <input
             type="email"
             id="email"
+            placeholder="Write anything"
             className={styles.input}
             {...register("email")}
           />
@@ -79,6 +81,7 @@ const Register = () => {
             Password
           </label>
           <input
+            placeholder="Write anything"
             type="password"
             id="password"
             className={styles.input}

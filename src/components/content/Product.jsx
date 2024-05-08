@@ -43,14 +43,14 @@ export const Product = ({
         <>
           <NavLink to={`update-game/${_id}`}>
             <BsVectorPen
-              size={25}
+              size={30}
               style={{ cursor: "pointer" }}
               className={styles.updateBtn}
             />
           </NavLink>
           <FaCircleXmark
             onClick={(e) => handleDelete(_id, e)}
-            size={25}
+            size={30}
             style={{ cursor: "pointer" }}
             className={styles.deleteBtn}
           />

@@ -16,7 +16,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border: 2px solid black;
+  border: 2px solid rgb(243, 186, 110);
 }
 
 .gamesContainer {
@@ -57,14 +57,14 @@
   padding: 7px;
   margin-right: 3px;
   :hover {
-    color: rgb(19, 19, 185);
+    color: rgb(214, 164, 99);
     cursor: pointer;
   }
 }
 
 .paymentButton {
   background-color: #1a202c;
-  color: #fff;
+  color: antiquewhite;
   font-size: 1rem;
   border-radius: 0.375rem;
   margin-top: 1rem;

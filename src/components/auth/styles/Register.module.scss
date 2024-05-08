@@ -23,11 +23,11 @@
   margin-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: 500;
-  color: #fff;
+  color: antiquewhite;
 }
 
 .input {
-  background-color: #edf2f7;
+  background-color: antiquewhite;
   color: #1a202c;
   font-size: 1rem;
   border-radius: 0.375rem;
@@ -43,7 +43,7 @@
 
 .button {
   background-color: #1a202c;
-  color: #fff;
+  color: rgb(214, 164, 99);
   font-size: 1rem;
   border-radius: 0.375rem;
   margin-top: 1rem;
@@ -54,10 +54,11 @@
 
 .button:hover {
   background-color: #3e4e7a;
+  cursor: pointer;
 }
 
 .loginLink {
-  color: #fff;
+  color: antiquewhite;
   margin-top: 0.625rem;
   font-size: 1rem;
   text-align: center;
@@ -66,4 +67,8 @@
 .link {
   text-decoration: none;
   color: #02091a;
+}
+
+.link:hover {
+  color: rgb(214, 164, 99);
 }

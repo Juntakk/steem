@@ -11,7 +11,7 @@ export const Header = ({ wishedItems }) => {
     <nav className={styles.navbar}>
       <div className={styles.navLink}>
         <NavLink to={"/"} className={styles.logo}>
-          <LuGamepad2 size={40} />
+          <LuGamepad2 size={50} />
           <span>Steem</span>
         </NavLink>{" "}
         {isLoggedIn ? (

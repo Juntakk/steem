@@ -146,7 +146,7 @@ const AddGame = () => {
           </div>
           <div className={styles.flexCol}>
             <label htmlFor="image" className={styles.label}>
-              Image:
+              Image (Path or URL):
             </label>
             <input
               type="text"
