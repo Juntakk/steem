@@ -44,14 +44,19 @@ function App() {
   useEffect(() => {
     axios
       .get(`https://steem-api.onrender.com/games`)
-      .then((games) => setGames(games.data), setIsLoading(false))
-      .catch((err) => console.log(err));
+      .then((response) => {
+        setGames(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching games:", error);
+      });
   }, [location]);
 
   // useEffect(() => {
   //   axios
   //     .get(`http://localhost:5000/games`)
-  //     .then((games) => setGames(games.data))
+  //     .then((games) => setGames(games.data),setIsLoading(false))
   //     .catch((err) => console.log(err));
   // }, [location]);
 
