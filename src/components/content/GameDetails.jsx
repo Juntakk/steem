@@ -12,7 +12,9 @@ export const GameDetails = ({ addToWishList, games }) => {
     <>
       {!game ? (
         <div className={styles.container}>
-          <h2 className={styles.loadingText}>Loading...</h2>
+          <h2 className={styles.loadingText}>
+            Sorry working on deployment issues
+          </h2>
         </div>
       ) : (
         <>
