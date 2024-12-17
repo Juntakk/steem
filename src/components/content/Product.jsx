@@ -41,7 +41,7 @@ export const Product = ({
       </NavLink>{" "}
       {isLoggedIn && (
         <>
-          <NavLink to={`update-game/${_id}`}>
+          {/* <NavLink to={`update-game/${_id}`}>
             <BsVectorPen
               size={30}
               style={{ cursor: "pointer" }}
@@ -53,7 +53,7 @@ export const Product = ({
             size={30}
             style={{ cursor: "pointer" }}
             className={styles.deleteBtn}
-          />
+          /> */}
         </>
       )}
       <div className={styles.textContainer}>

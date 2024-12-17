@@ -34,7 +34,7 @@ export const Header = ({ wishedItems }) => {
                 Store
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 to={"/add-game"}
                 className={`${styles.navItem} ${
@@ -43,7 +43,7 @@ export const Header = ({ wishedItems }) => {
               >
                 Add
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to={"/wishlist"}
