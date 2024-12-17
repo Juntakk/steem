@@ -1,5 +1,6 @@
 const data = [
   {
+    _id: "1",
     name: "Melvor Idle",
     category: "RPG",
     description:
@@ -9,6 +10,8 @@ const data = [
     image: "/images/melvor.jpg",
   },
   {
+    _id: "2",
+
     name: "Hellblade : Senua's Sacrifice",
     category: "Horror",
     description:
@@ -18,6 +21,8 @@ const data = [
     image: "/images/hellblade.jpg",
   },
   {
+    _id: "3",
+
     name: "Ori and the Blind Forest",
     category: "Platformer",
     description:
@@ -27,6 +32,8 @@ const data = [
     image: "/images/ori_2.jpg",
   },
   {
+    _id: "4",
+
     name: "Dark Souls",
     category: "Souls-like",
     description:
@@ -36,6 +43,8 @@ const data = [
     image: "/images/ds.jpg",
   },
   {
+    _id: "5",
+
     name: "Dark Souls 2",
     category: "Souls-like",
     description:
@@ -45,6 +54,8 @@ const data = [
     image: "/images/ds2.jpg",
   },
   {
+    _id: "6",
+
     name: "Dark Souls 3",
     category: "Souls-like",
     description:
@@ -54,6 +65,8 @@ const data = [
     image: "/images/ds3.jpg",
   },
   {
+    _id: "7",
+
     name: "Brotato",
     category: "Roguelike",
     description:
@@ -63,6 +76,8 @@ const data = [
     image: "/images/brotato.jpg",
   },
   {
+    _id: "8",
+
     name: "Vampire Survivors",
     category: "Roguelike",
     description:
@@ -72,6 +87,8 @@ const data = [
     image: "/images/vampire.jpg",
   },
   {
+    _id: "9",
+
     name: "Dragon's Dogma : Dark Arisen",
     category: "RPG",
     description:
@@ -81,6 +98,8 @@ const data = [
     image: "/images/dogma.jpg",
   },
   {
+    _id: "10",
+
     name: "Skyrim",
     category: "RPG",
     description:
@@ -90,6 +109,8 @@ const data = [
     image: "/images/skyrim.jpg",
   },
   {
+    _id: "11",
+
     name: "Sekiro : Shadows Die Twice",
     category: "Souls-like",
     description:
@@ -99,6 +120,8 @@ const data = [
     image: "/images/sekiro.jpg",
   },
   {
+    _id: "12",
+
     name: "Ori and the Will of the Wisps",
     category: "Platformer",
     description:
@@ -108,6 +131,8 @@ const data = [
     image: "/images/ori_1.jpg",
   },
   {
+    _id: "13",
+
     name: "Kena : Bridge of Spirits",
     category: "Adventure",
     description:
@@ -117,6 +142,8 @@ const data = [
     image: "/images/kena.jpg",
   },
   {
+    _id: "14",
+
     name: "God of War",
     category: "Adventure",
     description:
@@ -126,6 +153,8 @@ const data = [
     image: "/images/gow.jpg",
   },
   {
+    _id: "15",
+
     name: "Dead Space",
     category: "Horror",
     description:
@@ -135,6 +164,8 @@ const data = [
     image: "/images/deadspace.jpg",
   },
   {
+    _id: "16",
+
     name: "Hollow Knight",
     category: "Platformer",
     description:
@@ -144,6 +175,8 @@ const data = [
     image: "/images/hollowknight.jpg",
   },
   {
+    _id: "17",
+
     name: "Diviniy : Original Sin 2",
     category: "RPG",
     description:
@@ -153,6 +186,8 @@ const data = [
     image: "/images/div2.jpg",
   },
   {
+    _id: "18",
+
     name: "20 Minutes Till Dawn",
     category: "Roguelike",
     description:
@@ -162,6 +197,8 @@ const data = [
     image: "/images/20m.png",
   },
   {
+    _id: "19",
+
     name: "Elden Ring",
     category: "Souls-like",
     description:
@@ -171,6 +208,8 @@ const data = [
     image: "/images/elden.jpg",
   },
   {
+    _id: "20",
+
     name: "Curse of the Dead Gods",
     category: "Roguelike",
     description:
@@ -180,6 +219,8 @@ const data = [
     image: "/images/curse.jpg",
   },
   {
+    _id: "21",
+
     name: "Celeste",
     category: "Platformer",
     description:
@@ -189,6 +230,8 @@ const data = [
     image: "/images/celeste.png",
   },
   {
+    _id: "22",
+
     name: "Enter the Gungeon",
     category: "Roguelike",
     description:
@@ -198,6 +241,8 @@ const data = [
     image: "/images/gungeon.jpg",
   },
   {
+    _id: "23",
+
     name: "Horizon : Zero Dawn",
     category: "Adventure",
     description:
