@@ -12,13 +12,14 @@ import { GameDetails } from "./components/content/GameDetails";
 import { WishList } from "./components/content/WishList";
 import { useAuth } from "./contexts/authContext";
 import styles from "./App.module.scss";
+import data from "../src/data/data.js";
 
 import axios from "axios";
 
 function App() {
   const [wishList, setWishList] = useState([]);
   const [wishedItems, setWishedItems] = useState(0);
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState(data); // Initialize directly from data.js
   const { isLoggedIn } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
@@ -53,12 +54,12 @@ function App() {
   //     });
   // }, [location]);
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/games`)
-      .then((games) => setGames(games.data), setIsLoading(false))
-      .catch((err) => console.log(err));
-  }, [location]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5000/games`)
+  //     .then((games) => setGames(games.data),setIsLoading(false))
+  //     .catch((err) => console.log(err));
+  // }, [location]);
 
   const addToWishList = (game) => {
     const gameIds = wishList.map((item) => item._id);
