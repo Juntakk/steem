@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { FaCircleXmark } from "react-icons/fa6";
-import { BsVectorPen } from "react-icons/bs";
+// import { FaCircleXmark } from "react-icons/fa6";
+// import { BsVectorPen } from "react-icons/bs";
+// import { deleteGameById } from "../../apis/games";
 
 import { useAuth } from "../../contexts/authContext";
-import { deleteGameById } from "../../apis/games";
 import styles from "./styles/Product.module.scss";
 
 export const Product = ({
@@ -19,18 +19,18 @@ export const Product = ({
 }) => {
   const { isLoggedIn } = useAuth();
 
-  const handleDelete = async (gameId, e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    try {
-      const response = await deleteGameById(gameId);
-      if (response === gameId) {
-        return setGames(games.filter((game) => game._id !== gameId));
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const handleDelete = async (gameId, e) => {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   try {
+  //     const response = await deleteGameById(gameId);
+  //     if (response === gameId) {
+  //       return setGames(games.filter((game) => game._id !== gameId));
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className={styles.flexContainer}>
