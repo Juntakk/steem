@@ -1,6 +1,6 @@
 import { Content } from "./components/content/Content";
 import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Register from "./components/auth/Register";
 import { Login } from "./components/auth/Login";
 import AddGame from "./components/admin/AddGame";
@@ -14,16 +14,16 @@ import { useAuth } from "./contexts/authContext";
 import styles from "./App.module.scss";
 import data from "../src/data/data.js";
 
-import axios from "axios";
+// import axios from "axios";
 
 function App() {
   const [wishList, setWishList] = useState([]);
   const [wishedItems, setWishedItems] = useState(0);
   const [games, setGames] = useState(data); // Initialize directly from data.js
   const { isLoggedIn } = useAuth();
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   //WishList storage
   useEffect(() => {
@@ -105,7 +105,7 @@ function App() {
                   addToWishList={addToWishList}
                   wishList={wishList}
                   setWishList={setWishList}
-                  isLoading={isLoading}
+                  // isLoading={isLoading}
                 />
               }
             />
