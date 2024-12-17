@@ -41,24 +41,24 @@ function App() {
   }, [wishList, wishedItems]);
 
   //Get games from DB
-  useEffect(() => {
-    axios
-      .get(`https://steem-api.onrender.com/games`)
-      .then((response) => {
-        setGames(response.data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching games:", error);
-      });
-  }, [location]);
-
   // useEffect(() => {
   //   axios
-  //     .get(`http://localhost:5000/games`)
-  //     .then((games) => setGames(games.data),setIsLoading(false))
-  //     .catch((err) => console.log(err));
+  //     .get(`https://steem-api.onrender.com/games`)
+  //     .then((response) => {
+  //       setGames(response.data);
+  //       setIsLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching games:", error);
+  //     });
   // }, [location]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/games`)
+      .then((games) => setGames(games.data), setIsLoading(false))
+      .catch((err) => console.log(err));
+  }, [location]);
 
   const addToWishList = (game) => {
     const gameIds = wishList.map((item) => item._id);

@@ -1,5 +1,5 @@
-const GAMES_URL = "https://steem-api.onrender.com/games";
-// const GAMES_URL = "http://localhost:5000/games";
+// const GAMES_URL = "https://steem-api.onrender.com/games";
+const GAMES_URL = "http://localhost:5000/games";
 
 export const getAllGames = async (gameId) => {
   const response = await fetch(`${GAMES_URL}/${gameId}`);
