@@ -21,6 +21,7 @@ function App() {
   const [wishedItems, setWishedItems] = useState(0);
   const [games, setGames] = useState(data); // Initialize directly from data.js
   const { isLoggedIn } = useAuth();
+  const [isWishListed, setIsWishListed] = useState(false);
   // const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   // const location = useLocation();
@@ -74,13 +75,16 @@ function App() {
       setWishedItems((prev) => prev + 1);
       navigate("/wishlist");
     } else {
-      console.log("Game already in wishlist");
+      setIsWishListed(true);
     }
   };
+
   const removeFromWishList = (id) => {
     setWishList(wishList.filter((game) => game._id !== id));
     if (wishedItems > 0) {
       setWishedItems(wishedItems - 1);
+    } else {
+      setIsWishListed(false, id);
     }
   };
 
@@ -104,7 +108,8 @@ function App() {
                   setGames={setGames}
                   addToWishList={addToWishList}
                   wishList={wishList}
-                  setWishList={setWishList}
+                  setIsWishListed={setIsWishListed}
+                  isWishListed={isWishListed}
                   // isLoading={isLoading}
                 />
               }
@@ -126,6 +131,7 @@ function App() {
                 <GameDetails
                   addToWishList={addToWishList}
                   removeFromWishList={removeFromWishList}
+                  wishList={wishList}
                   games={games}
                 />
               }

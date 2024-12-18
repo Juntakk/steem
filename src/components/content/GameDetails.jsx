@@ -1,13 +1,16 @@
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./styles/GameDetails.module.scss";
 
-export const GameDetails = ({ addToWishList, games }) => {
+export const GameDetails = ({ addToWishList, games, wishList }) => {
   const params = useParams();
   const navigate = useNavigate();
 
   const gameId = params.id;
   const game = games.find((item) => item._id === gameId);
 
+  const isGameWishListed = () => {
+    return wishList.some((item) => item._id === game._id);
+  };
   return (
     <>
       {!game ? (
@@ -35,8 +38,9 @@ export const GameDetails = ({ addToWishList, games }) => {
               <button
                 className={styles.addToWishListButton}
                 onClick={() => addToWishList(game)}
+                style={isGameWishListed() ? { color: "green" } : null}
               >
-                Add to WishList
+                {isGameWishListed() ? "Already in Wishlist" : "Add to WishList"}
               </button>
             </div>
           </div>

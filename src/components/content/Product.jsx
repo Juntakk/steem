@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 import { useAuth } from "../../contexts/authContext";
 import styles from "./styles/Product.module.scss";
+import { useEffect } from "react";
 
 export const Product = ({
   image,
@@ -16,9 +17,13 @@ export const Product = ({
   setGames,
   addToWishList,
   game,
+  isWishListed,
+  setIsWishListed,
+  wishList,
 }) => {
   const { isLoggedIn } = useAuth();
 
+  useEffect(() => {});
   // const handleDelete = async (gameId, e) => {
   //   e.preventDefault();
   //   e.stopPropagation();
@@ -31,6 +36,10 @@ export const Product = ({
   //     console.log(error);
   //   }
   // };
+
+  const isGameWishListed = () => {
+    return wishList.some((item) => item._id === game._id);
+  };
 
   return (
     <div className={styles.flexContainer}>
@@ -65,8 +74,9 @@ export const Product = ({
         <button
           className={styles.addToWishListButton}
           onClick={() => addToWishList(game)}
+          style={isGameWishListed() ? { color: "green" } : null}
         >
-          Add to Wishlist
+          {isGameWishListed() ? "Already in Wishlist" : "Add to Wishlist"}
         </button>
       </div>
     </div>

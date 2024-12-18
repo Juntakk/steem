@@ -6,7 +6,15 @@ import { RingLoader } from "react-spinners";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext.js";
 
-export const Content = ({ games, setGames, addToWishList, isLoading }) => {
+export const Content = ({
+  games,
+  setGames,
+  addToWishList,
+  isLoading,
+  isWishListed,
+  wishList,
+  setIsWishListed,
+}) => {
   const [inputValue, setInputValue] = useState("");
   const [selectedCat, setSelectedCat] = useState("all");
   const { isLoggedIn } = useAuth();
@@ -64,6 +72,9 @@ export const Content = ({ games, setGames, addToWishList, isLoading }) => {
                   setGames={setGames}
                   game={item}
                   addToWishList={addToWishList}
+                  isWishListed={isWishListed}
+                  setIsWishListed={setIsWishListed}
+                  wishList={wishList}
                 />
               ))
             ) : isLoading ? (
