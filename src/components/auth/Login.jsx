@@ -5,7 +5,6 @@ import { useState, useContext } from "react";
 import styles from "./styles/Login.module.scss";
 
 export const Login = () => {
-  const { BASE_URL } = useContext(ApiContext);
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -16,18 +15,8 @@ export const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${BASE_URL}/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        login();
-        navigate("/");
-      }
+      login();
+      navigate("/");
     } catch (error) {
       console.error("Login error:", error);
     }
