@@ -1,7 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
-import ApiContext from "../../contexts/apiContext";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import styles from "./styles/Login.module.scss";
 
 export const Login = () => {
