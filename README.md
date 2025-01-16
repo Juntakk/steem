@@ -7,7 +7,7 @@
 <table>
   <tr>
     <td>
-      <img src="src/screenshots/steem1.png" alt="Main Page" width="222">
+      <img src="src/screenshots/steem1.png" alt="Main Page" width="555">
     </td>
     <td>
       <b>Main Page:</b>
@@ -18,7 +18,7 @@
   </tr>
   <tr>
     <td>
-      <img src="src/screenshots/steem2.png" alt="Main Page" width="222">
+      <img src="src/screenshots/steem2.png" alt="Main Page" width="555">
     </td>
     <td>
       <b>Store Page:</b>
@@ -29,7 +29,7 @@
   </tr>
   <tr>
     <td>
-      <img src="src/screenshots/steem3.png" alt="Main Page" width="222">
+      <img src="src/screenshots/steem3.png" alt="Main Page" width="555">
     </td>
     <td>
       <b>Wishlist Page:</b>
@@ -40,7 +40,7 @@
   </tr>
   <tr>
     <td>
-      <img src="src/screenshots/steem4.png" alt="Main Page" width="222">
+      <img src="src/screenshots/steem4.png" alt="Main Page" width="555">
     </td>
     <td>
       <b>Game Details Page:</b>
