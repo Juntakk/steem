@@ -1,87 +1,118 @@
+/* Main container for the page */
+.container {
+  background-color: #1a202c; /* Dark background */
+  color: white;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title of the wishlist */
 .title {
   text-align: center;
-  margin-top: 2rem;
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  color: #02091a;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #f39c12;
   font-style: italic;
 }
 
-.container {
+/* Container for the game items */
+.itemsContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
 }
-.gameContainer {
+
+/* Individual game item container */
+.gameItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #2c3e50;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
   width: 100%;
-  border: 2px solid rgb(243, 186, 110);
+  max-width: 700px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.gamesContainer {
+/* Image link styles */
+.imageLink {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+/* Image styling */
+.gameImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Game details (name and price) */
+.gameDetails {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #5e656f;
-  margin-inline: 500px;
-}
-
-.gamesContainer .image {
-  height: 120px;
-  width: 83px;
-  margin-left: 0;
-}
-.gamesContainer a {
-  height: 120px;
-}
-
-.price {
-  margin-left: 1rem;
-  font-size: 1.4rem;
-  margin-right: 1rem;
-  color: black;
-  font-weight: bold;
-  font-family: monospace;
-}
-.name {
-  color: black;
-  font-size: 1.2rem;
-  width: 150px;
   margin-left: 20px;
-  font-weight: bold;
-  font-family: monospace;
+  flex-grow: 1;
 }
 
+.gameName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f39c12;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.gamePrice {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ecf0f1;
+}
+
+/* Delete button */
 .deleteBtn {
-  padding: 7px;
-  margin-right: 3px;
+  cursor: pointer;
+  color: #e74c3c;
+  transition: color 0.3s ease;
   :hover {
-    color: rgb(214, 164, 99);
-    cursor: pointer;
+    color: #c0392b;
   }
 }
 
+/* No games message */
+.noGamesMessage {
+  font-size: 1.5rem;
+  color: #bdc3c7;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Payment button */
 .paymentButton {
-  background-color: #1a202c;
-  color: antiquewhite;
-  font-size: 1rem;
-  border-radius: 0.375rem;
-  margin-top: 1rem;
-  padding: 0.625rem 1.25rem;
-  margin-inline: 600px;
-  transition: background-color 0.15s ease-in-out;
+  background-color: #16a085;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .paymentButton:hover {
-  background-color: #3e4e7a;
-  cursor: pointer;
-}
-
-.noGamesMessage {
-  margin-top: 30px;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 30px;
-  font-size: 2rem;
+  background-color: #1abc9c;
 }

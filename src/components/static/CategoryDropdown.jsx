@@ -14,7 +14,11 @@ export const CategoryDropdown = ({ onCategoryChange }) => {
 
   return (
     <div className={styles.catDropDown}>
+      <label htmlFor="category-select" className={styles.dropdownLabel}>
+        Category
+      </label>
       <select
+        id="category-select"
         className={styles.customSelect}
         name="Categories"
         value={selectedCat}

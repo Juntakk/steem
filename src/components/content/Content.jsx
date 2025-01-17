@@ -38,13 +38,13 @@ export const Content = ({
     <>
       <div className={styles.flexContainer}>
         <div className={styles.subContainer}>
+          <CategoryDropdown onCategoryChange={handleSelectedCat} />
           <input
             onChange={handleValue}
             type="text"
             placeholder="Search"
             className={styles.inputField}
           />
-          <CategoryDropdown onCategoryChange={handleSelectedCat} />
         </div>
         <div>
           {!isLoggedIn ? (
@@ -52,7 +52,7 @@ export const Content = ({
               <NavLink to={"/login"}>
                 <span className={styles.login}>Login</span>
               </NavLink>
-              <span> to unlock game management !</span>
+              <span> to unlock your wishlist !</span>
             </p>
           ) : (
             ""

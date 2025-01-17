@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 import { useState } from "react";
-import styles from "./styles/Login.module.scss";
+import styles from "./styles/auth.module.scss";
 
 export const Login = () => {
   const { login } = useAuth();
@@ -12,7 +12,6 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       login();
       navigate("/");
@@ -24,15 +23,15 @@ export const Login = () => {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <h2 className={styles.title}>Login</h2>
+        <h2 className={styles.title}>Welcome Back</h2>
+        <p className={styles.subtitle}>Log in to your account</p>
         <div className={styles.inputGroup}>
           <label htmlFor="email" className={styles.label}>
-            Email
+            Email Address
           </label>
           <input
-            type="text"
+            type="email"
             id="email"
-            placeholder="Write anything"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={styles.input}
@@ -46,7 +45,6 @@ export const Login = () => {
           <input
             type="password"
             id="password"
-            placeholder="Write anything"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className={styles.input}
@@ -54,12 +52,12 @@ export const Login = () => {
           />
         </div>
         <button type="submit" className={styles.button}>
-          Login
+          Log In
         </button>
-        <div className={styles.signupLink}>
-          Don't have an account?{" "}
+        <div className={styles.footer}>
+          <span>Don't have an account? </span>
           <NavLink to={"/register"} className={styles.link}>
-            <span>Sign up here</span>
+            Sign Up
           </NavLink>
         </div>
       </form>

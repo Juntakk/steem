@@ -2,10 +2,15 @@
   margin: 0;
   padding: 0;
 }
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2d2d2d; /* Dark gray background */
+}
 .app {
-  min-height: 100vh;
-  max-width: 100vw;
-  background-color: #434a55;
   cursor: default;
+}
+.mainContent {
+  padding-bottom: 80px; /* Add some space at the bottom for the footer */
 }

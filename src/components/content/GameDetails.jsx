@@ -11,16 +11,17 @@ export const GameDetails = ({ addToWishList, games, wishList }) => {
   const isGameWishListed = () => {
     return wishList.some((item) => item._id === game._id);
   };
+
   return (
     <>
       {!game ? (
-        <div className={styles.container}>
+        <div className={styles.loadingContainer}>
           <h2 className={styles.loadingText}>
-            Sorry working on deployment issues
+            Sorry, we're currently resolving deployment issues.
           </h2>
         </div>
       ) : (
-        <>
+        <div className={styles.gameDetailsContainer}>
           <button
             className={styles.backButton}
             onClick={() => navigate("/games")}
@@ -28,23 +29,28 @@ export const GameDetails = ({ addToWishList, games, wishList }) => {
             Back to Store
           </button>
           <div className={styles.gameDetails}>
-            <img className={styles.gameImage} src={`${game.image}`} alt="" />
+            <div className={styles.gameImageContainer}>
+              <img
+                className={styles.gameImage}
+                src={game.image}
+                alt={game.name}
+              />
+            </div>
             <div className={styles.gameInfo}>
               <h2 className={styles.gameName}>{game.name}</h2>
               <p className={styles.gameDescription}>{game.description}</p>
-            </div>
-            <div className={styles.gameActions}>
               <p className={styles.gamePrice}>{game.price}</p>
               <button
-                className={styles.addToWishListButton}
+                className={`${styles.addToWishListButton} ${
+                  isGameWishListed() ? styles.inWishlist : ""
+                }`}
                 onClick={() => addToWishList(game)}
-                style={isGameWishListed() ? { color: "green" } : null}
               >
-                {isGameWishListed() ? "Already in Wishlist" : "Add to WishList"}
+                {isGameWishListed() ? "Already in Wishlist" : "Add to Wishlist"}
               </button>
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );

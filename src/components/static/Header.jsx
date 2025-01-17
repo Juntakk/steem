@@ -7,19 +7,73 @@ export const Header = ({ wishedItems }) => {
   const { isLoggedIn, logout } = useAuth();
   const location = useLocation();
 
+  const isLoginPage = location.pathname === "/login";
+  const isRegisterPage = location.pathname === "/register";
+
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navLink}>
+      <div className={styles.logoContainer}>
         <NavLink to={"/"} className={styles.logo}>
-          <LuGamepad2 size={50} />
-          <span>Steem</span>
-        </NavLink>{" "}
+          <LuGamepad2 size={40} />
+          <span className={styles.logoText}>Steem</span>
+        </NavLink>
+      </div>
+      <div className={styles.links}>
         {isLoggedIn ? (
-          <ul>
+          <>
+            <ul className={styles.navList}>
+              <li>
+                <NavLink
+                  to={"/"}
+                  className={`${styles.navItem} ${
+                    location.pathname === "/" && styles.active
+                  }`}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={"/games"}
+                  className={`${styles.navItem} ${
+                    location.pathname === "/games" && styles.active
+                  }`}
+                >
+                  Store
+                </NavLink>
+              </li>
+              <li className={styles.wishlistItem}>
+                <NavLink
+                  to={"/wishlist"}
+                  className={`${styles.navItem} ${
+                    location.pathname === "/wishlist" && styles.active
+                  }`}
+                >
+                  Wishlist
+                </NavLink>
+                {wishedItems > 0 && (
+                  <span className={styles.wishedCount}>{wishedItems}</span>
+                )}
+              </li>
+              <li>
+                <NavLink
+                  onClick={logout}
+                  to={"/login"}
+                  className={styles.navItem}
+                >
+                  Logout
+                </NavLink>
+              </li>
+            </ul>
+          </>
+        ) : (
+          <ul className={styles.navList}>
             <li>
               <NavLink
                 to={"/"}
-                className={`${location.pathname === "/" && styles.active}`}
+                className={`${styles.navItem} ${
+                  location.pathname === "/" && styles.active
+                }`}
               >
                 Home
               </NavLink>
@@ -34,62 +88,17 @@ export const Header = ({ wishedItems }) => {
                 Store
               </NavLink>
             </li>
-            {/* <li>
-              <NavLink
-                to={"/add-game"}
-                className={`${styles.navItem} ${
-                  location.pathname === "/add-game" && styles.active
-                }`}
-              >
-                Add
-              </NavLink>
-            </li> */}
             <li>
               <NavLink
-                to={"/wishlist"}
+                to={isLoginPage ? "/register" : "/login"}
                 className={`${styles.navItem} ${
-                  location.pathname === "/wishlist" && styles.active
+                  (isLoginPage || isRegisterPage) && styles.active
                 }`}
               >
-                Wishlist{" "}
+                {isLoginPage ? "Signup" : "Login"}
               </NavLink>
             </li>
-            <div className={styles.spanNumber}>({wishedItems})</div>
-            <NavLink
-              onClick={logout}
-              to={"/login"}
-              className={styles.logoutLink}
-            >
-              Logout
-            </NavLink>
           </ul>
-        ) : (
-          <>
-            <NavLink
-              to={"/"}
-              className={`${styles.navItem2} ${
-                location.pathname === "/" && styles.active
-              }`}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to={"/games"}
-              className={`${styles.navItem2} ${
-                location.pathname === "/games" && styles.active
-              }`}
-            >
-              Store
-            </NavLink>
-            <NavLink
-              to={"/login"}
-              className={`${styles.loginRegister} ${
-                location.pathname === "/login" && styles.active
-              }`}
-            >
-              Login
-            </NavLink>
-          </>
         )}
       </div>
     </nav>

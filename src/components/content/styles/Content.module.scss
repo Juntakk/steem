@@ -1,98 +1,141 @@
 .flexContainer {
   display: flex;
-  max-width: 1280px;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 20px;
-  margin: 0 auto 0 40px;
-  border-radius: 8px;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100%;
+  background-color: #2d2d2d;
+  color: #f0e4d7;
 }
 
 .subContainer {
-  // padding: 15px;
-  height: 160px;
-  margin-top: 40px;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 250px;
 }
 
 .inputField {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  width: 260px;
-  background-color: antiquewhite;
+  background-color: #444;
+  border: 1px solid #888;
+  color: #f0e4d7;
+  margin-top: 20px;
   padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  align-self: center;
+}
+
+.inputField::placeholder {
+  color: #ccc;
+}
+a {
+  text-decoration: none;
+}
+.selectCategory {
+  background-color: #444;
+  color: #f0e4d7;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  max-width: 300px;
+}
+
+.storeButton {
+  background-color: #1a202c;
+  color: #f0e4d7;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.storeButton:hover {
+  background-color: #2b3b4d;
+}
+
+.message {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #f0e4d7;
+  text-decoration: none;
+}
+
+.message .login {
+  color: #d1a054;
+  text-decoration: none;
+}
+
+.message .login:hover {
+  color: #f0e4d7;
 }
 
 .productContainer {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  align-items: center;
-  padding: 40px;
-  margin-left: 40px;
-}
-
-.loadingText {
-  font-size: 3.5rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: antiquewhite;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 25px;
-  margin-left: 220px;
-}
-.loadingText p {
-  margin-left: 45px;
-  margin-block: 20px;
-  font-weight: bold;
-  color: #1b2438;
-}
-
-.loadingText p:nth-child(2) {
-  width: 290px;
-  margin-top: 2px;
-  margin-left: 30px;
-  text-align: center;
-  font-size: 1.1rem;
+  width: 100%;
+  padding-top: 20px;
+  margin-top: 10px;
+  height: 100%;
 }
 
 .nogames {
-  margin-top: 10px;
-  width: 400px;
-  font-size: 2rem;
-  color: #1b2438;
-  font-weight: bold;
-  margin-left: 250px;
-}
-
-p:last-child {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #888;
 }
 
 .linkToAdd {
-  font-size: 2rem;
-  color: rgb(243, 186, 110);
+  color: #d6a465;
   font-weight: bold;
-  font-style: italic;
-}
-.linkToAdd:hover {
-  color: black;
+  cursor: pointer;
 }
 
-.message {
-  margin-top: 20px;
-  font-size: 2rem;
-  color: #02091a;
-  font-weight: bold;
-  font-style: italic;
-  text-align: center;
+.loadingText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #888;
 }
 
-.login {
-  font-size: 2rem;
-  color: #02091a;
-  text-decoration: underline;
+@media screen and (max-width: 768px) {
+  .flexContainer {
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+  }
+
+  .subContainer {
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .inputField {
+    width: 100%;
+  }
 }
-.login:hover {
-  color: rgb(243, 186, 110);
+
+@media screen and (max-width: 480px) {
+  .productContainer {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .message {
+    font-size: 0.9rem;
+  }
 }

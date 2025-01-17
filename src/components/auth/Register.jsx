@@ -5,20 +5,20 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext } from "react";
 import ApiContext from "../../contexts/apiContext";
 import { useAuth } from "../../contexts/authContext";
-import styles from "./styles/Register.module.scss";
+import styles from "./styles/auth.module.scss";
 
 const Register = () => {
   const { BASE_URL } = useContext(ApiContext);
   const { login } = useAuth();
-
   const navigate = useNavigate();
+
   const schema = yup.object({
-    name: yup.string().min(1, "Name too short").required("Name is required"),
-    email: yup.string().min(1, "Email too short").required("Email is required"),
+    name: yup.string().min(1, "Name is required").required("Name is required"),
+    email: yup.string().email("Invalid email").required("Email is required"),
     password: yup
       .string()
-      .min(1, "Password too short")
-      .required("Password required"),
+      .min(8, "Password must be at least 8 characters")
+      .required("Password is required"),
   });
 
   const {
@@ -37,42 +37,43 @@ const Register = () => {
     });
 
     if (response.ok) {
-      navigate("/");
       login();
+      navigate("/");
     }
   };
 
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit(submit)} className={styles.form}>
-        <h2 className={styles.title}>Sign Up</h2>
+        <h2 className={styles.title}>Create Account</h2>
+        <p className={styles.subtitle}>Sign up to start your journey</p>
         <div className={styles.inputGroup}>
           <label htmlFor="name" className={styles.label}>
-            Full name
+            Full Name
           </label>
           <input
-            placeholder="Write anything"
-            type="name"
+            type="text"
             id="name"
-            className={styles.input}
             {...register("name")}
+            className={styles.input}
+            required
           />
-          {errors?.name && (
+          {errors.name && (
             <span className={styles.error}>{errors.name.message}</span>
           )}
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="email" className={styles.label}>
-            Email
+            Email Address
           </label>
           <input
             type="email"
             id="email"
-            placeholder="Write anything"
-            className={styles.input}
             {...register("email")}
+            className={styles.input}
+            required
           />
-          {errors?.email && (
+          {errors.email && (
             <span className={styles.error}>{errors.email.message}</span>
           )}
         </div>
@@ -81,23 +82,23 @@ const Register = () => {
             Password
           </label>
           <input
-            placeholder="Write anything"
             type="password"
             id="password"
-            className={styles.input}
             {...register("password")}
+            className={styles.input}
+            required
           />
-          {errors?.password && (
+          {errors.password && (
             <span className={styles.error}>{errors.password.message}</span>
           )}
         </div>
         <button type="submit" className={styles.button}>
-          Register
+          Sign Up
         </button>
-        <div className={styles.loginLink}>
-          Already have an account?{" "}
+        <div className={styles.footer}>
+          <span>Already have an account? </span>
           <NavLink to={"/login"} className={styles.link}>
-            <span>Login here</span>
+            Log In
           </NavLink>
         </div>
       </form>
