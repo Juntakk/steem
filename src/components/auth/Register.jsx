@@ -2,13 +2,10 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useContext } from "react";
-import ApiContext from "../../contexts/apiContext";
 import { useAuth } from "../../contexts/authContext";
 import styles from "./styles/auth.module.scss";
 
 const Register = () => {
-  const { BASE_URL } = useContext(ApiContext);
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -27,19 +24,9 @@ const Register = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const submit = async (values) => {
-    const response = await fetch(`${BASE_URL}/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
-
-    if (response.ok) {
-      login();
-      navigate("/");
-    }
+  const submit = () => {
+    login();
+    navigate("/");
   };
 
   return (

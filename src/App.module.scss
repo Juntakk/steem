@@ -1,3 +1,6 @@
+.app {
+  cursor: default;
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +9,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #2d2d2d; /* Dark gray background */
-}
-.app {
-  cursor: default;
+  background-color: #2d2d2d;
 }
 .mainContent {
-  padding-bottom: 80px; /* Add some space at the bottom for the footer */
+  padding-bottom: 80px;
 }

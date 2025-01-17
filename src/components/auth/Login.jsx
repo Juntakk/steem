@@ -10,14 +10,9 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      login();
-      navigate("/");
-    } catch (error) {
-      console.error("Login error:", error);
-    }
+  const handleSubmit = () => {
+    login();
+    navigate("/");
   };
 
   return (

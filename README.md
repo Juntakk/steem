@@ -48,7 +48,7 @@
   </tr>
   <tr>
     <td>
-      <img src="src/screenshots/steem3.png" alt="Wishlist Page" width="555">
+      <img src="src/screenshots/steem4.png" alt="Wishlist Page" width="555">
     </td>
     <td>
       <b>Wishlist Page:</b>
@@ -59,12 +59,24 @@
   </tr>
   <tr>
     <td>
-      <img src="src/screenshots/steem4.png" alt="Game Details Page" width="555">
+      <img src="src/screenshots/steem3.png" alt="Game Details Page" width="555">
     </td>
     <td>
       <b>Game Details Page:</b>
       <p>
         The game details page provides in-depth information about a selected game, including its title, description, price, and reviews. Navigation to this page is handled through <strong>React Router</strong>, ensuring a smooth transition while passing game data as props.
+      </p>
+    </td>
+  </tr>
+   </tr>
+  <tr>
+    <td>
+      <img src="src/screenshots/steem5.png" alt="Game Details Page" width="555">
+    </td>
+    <td>
+      <b>Login Page:</b>
+      <p>
+        The login page provides the user with a simple and clean interface to eithe rlogin, or navigate to the signup view. The data is then analyzed and sent to MongoDb database for further use. 
       </p>
     </td>
   </tr>

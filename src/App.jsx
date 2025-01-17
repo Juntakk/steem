@@ -1,10 +1,8 @@
 import { Content } from "./components/content/Content";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Register from "./components/auth/Register";
 import { Login } from "./components/auth/Login";
-import AddGame from "./components/admin/AddGame";
-import UpdateGame from "./components/admin/UpdateGame";
 import { NotFound } from "./components/static/NotFound";
 import { Header } from "./components/static/Header";
 import { Home } from "./components/static/Home";
@@ -58,7 +56,7 @@ function App() {
       setIsWishListed(true);
     }
   };
-
+  console.log(styles);
   const removeFromWishList = (id) => {
     setWishList(wishList.filter((game) => game._id !== id));
     if (wishedItems > 0) {
@@ -75,11 +73,6 @@ function App() {
           <Header wishedItems={wishedItems} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/add-game" element={<AddGame />} />
-            <Route
-              path="games/update-game/:id"
-              element={<UpdateGame games={games} setGames={setGames} />}
-            />
             <Route
               path="/games"
               element={
@@ -90,7 +83,6 @@ function App() {
                   wishList={wishList}
                   setIsWishListed={setIsWishListed}
                   isWishListed={isWishListed}
-                  // isLoading={isLoading}
                 />
               }
             />
@@ -118,7 +110,6 @@ function App() {
             />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          {/* <Footer /> */}
         </main>
       </div>
     </>
