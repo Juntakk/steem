@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaCircleXmark } from "react-icons/fa6";
-import "./styles/wishList.css";
+import "./styles/wishlist.css";
 
 export const WishList = ({ wishList, removeFromWishList }) => {
   return (
