@@ -3,12 +3,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2d2d2d; /* Dark gray background */
-  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  overflow: hidden;
 }
 
 .backButton {
-  margin-bottom: 20px;
   padding: 10px 20px;
   background-color: #444;
   color: white;
@@ -16,41 +15,43 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  &:hover {
-    background-color: #555;
-  }
+}
+
+.backButton:hover {
+  background-color: #555;
 }
 
 .gameDetails {
   display: flex;
-  margin-top: 8rem;
-  justify-content: center;
-  align-items: stretch; /* Ensures equal height */
+  flex-direction: row !important; /* Keep elements in a row */
+  justify-content: space-evenly;
+  align-items: center; /* Align items to the top */
   gap: 20px;
-  max-width: 1000px;
+  height: 70vh;
+  max-width: 100%;
   flex-wrap: wrap;
 }
 
 .gameImageContainer {
-  flex: 0 0 200px;
+  flex: 0 0 200px; /* Fixed size for the image */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: auto; /* Remove height restriction */
 }
 
 .gameImage {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100%; /* Makes image responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the space proportionally */
   border-radius: 8px;
-  max-height: 400px; /* Optional: restrict the max height */
+  max-height: 250px; /* Optional: Set a max height for the image */
 }
 
 .gameInfo {
-  flex: 1;
-  max-width: 500px;
-  min-width: 250px;
+  flex: 1; /* Allow game info to grow and take up remaining space */
+  max-width: 600px;
+  min-width: 450px;
   padding: 20px;
   background-color: #222;
   color: #f4f4f4;
@@ -58,23 +59,23 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align content to the top */
 }
 
 .gameName {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   margin-bottom: 10px;
 }
 
 .gameDescription {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-bottom: 15px;
   color: #ccc;
   flex-grow: 1; /* Makes the description take available space */
 }
 
 .gamePrice {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #f39c12;
   margin-bottom: 20px;
@@ -91,22 +92,22 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   width: 100%;
   text-align: center;
+}
 
-  &:hover {
-    background-color: #f4f4f4;
-    color: #444;
-  }
+.addToWishListButton:hover {
+  background-color: #f4f4f4;
+  color: #444;
+}
 
-  &.inWishlist {
-    background-color: #27ae60;
-    border-color: #27ae60;
-    color: white;
+.addToWishListButton.inWishlist {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  color: white;
+}
 
-    &:hover {
-      background-color: #2ecc71;
-      border-color: #2ecc71;
-    }
-  }
+.addToWishListButton.inWishlist:hover {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
 }
 
 .loadingContainer {

@@ -4,58 +4,59 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
+    filename: "[name].[contenthash].bundle.js", // Ensure unique output filenames
+    chunkFilename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    assetModuleFilename: "assets/[hash][ext][query]", // For images and PDFs
-    clean: true, // Clears the dist folder before each build
+    clean: true, // Clean the output directory before building
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      name: (module, chunks, cacheGroupKey) =>
+        `${cacheGroupKey}-${chunks[0].name || "chunk"}`,
+    },
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // Transpile JS and JSX files
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
         },
       },
       {
-        test: /\.module\.scss$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              modules: {
-                auto: true,
-                localIdentName: "[name]__[local]--[hash:base64:5]", // Customize as needed
-              },
-            },
-          },
-          "sass-loader",
-        ],
-      },
-      {
-        test: /\.css$/, // Handle CSS files
+        test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|pdf)$/i, // Handle assets (images and PDFs)
+        test: /\.(png|jpe?g|gif|svg)$/i,
         type: "asset/resource",
+        generator: {
+          filename: "images/[name][hash][ext]",
+        },
+      },
+      {
+        test: /\.pdf$/,
+        type: "asset/resource",
+        generator: {
+          filename: "pdfs/[name][ext]",
+        },
       },
     ],
-  },
-  resolve: {
-    extensions: [".js", ".jsx"], // Allow imports without extensions
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/favicon.ico",
     }),
   ],
   devServer: {
-    static: path.join(__dirname, "dist"),
+    static: "./dist",
     port: 3000,
     open: true,
-    hot: true, // Enable hot reloading
   },
 };

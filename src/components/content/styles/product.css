@@ -18,12 +18,13 @@
 
 .link {
   text-decoration: none;
+  margin: 0 !important;
 }
 
 .imageContainer {
   position: relative;
   width: 100%;
-  padding-top: 75%; /* 4:3 aspect ratio */
+  padding-top: 55%; /* 4:3 aspect ratio */
   background-color: #444;
   overflow: hidden;
 }

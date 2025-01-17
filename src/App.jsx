@@ -9,9 +9,8 @@ import { Home } from "./components/static/Home";
 import { GameDetails } from "./components/content/GameDetails";
 import { WishList } from "./components/content/WishList";
 import { useAuth } from "./contexts/authContext";
-import styles from "./App.module.scss";
 import data from "../src/data/data.js";
-
+import "./index.css";
 // import axios from "axios";
 
 function App() {
@@ -56,7 +55,6 @@ function App() {
       setIsWishListed(true);
     }
   };
-  console.log(styles);
   const removeFromWishList = (id) => {
     setWishList(wishList.filter((game) => game._id !== id));
     if (wishedItems > 0) {

@@ -1,7 +1,10 @@
 html {
   font-size: 15px !important;
 }
-
+* {
+  margin: 0;
+  padding: 0;
+}
 /* Targeting the scrollbar */
 ::-webkit-scrollbar {
   width: 12.5px; /* Width of the scrollbar */
@@ -20,4 +23,7 @@ html {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #275479; /* Color of the thumb on hover */
+}
+body {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
 }
