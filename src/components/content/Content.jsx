@@ -1,10 +1,11 @@
 import { Product } from "./Product.jsx";
 import { useState } from "react";
 import { CategoryDropdown } from "../static/CategoryDropdown.jsx";
-import styles from "./styles/Content.module.scss";
 import { RingLoader } from "react-spinners";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext.js";
+import "./styles/content.css"; // Update to regular CSS
+import React from "react";
 
 export const Content = ({
   games,
@@ -36,28 +37,28 @@ export const Content = ({
 
   return (
     <>
-      <div className={styles.flexContainer}>
-        <div className={styles.subContainer}>
+      <div className="flexContainer">
+        <div className="subContainer">
           <CategoryDropdown onCategoryChange={handleSelectedCat} />
           <input
             onChange={handleValue}
             type="text"
             placeholder="Search"
-            className={styles.inputField}
+            className="inputField"
           />
         </div>
         <div>
           {!isLoggedIn ? (
-            <p className={styles.message}>
+            <p className="message">
               <NavLink to={"/login"}>
-                <span className={styles.login}>Login</span>
+                <span className="login">Login</span>
               </NavLink>
               <span> to unlock your wishlist !</span>
             </p>
           ) : (
             ""
           )}
-          <div className={styles.productContainer}>
+          <div className="productContainer">
             {filteredGames.length > 0 ? (
               filteredGames.map((item) => (
                 <Product
@@ -78,19 +79,19 @@ export const Content = ({
                 />
               ))
             ) : isLoading ? (
-              <div className={styles.loadingText}>
+              <div className="loadingText">
                 <p>Loading...</p>
                 <p>This will take about 30 seconds</p>
                 <RingLoader color="rgb(214, 164, 99)" size={100} />
               </div>
             ) : (
-              <div className={styles.nogames}>
+              <div className="nogames">
                 <p>No results found.</p>
                 {isLoggedIn ? (
                   <p>
                     Add your own game
                     <NavLink to={"/add-game"}>
-                      <span className={styles.linkToAdd}> here</span>
+                      <span className="linkToAdd"> here</span>
                     </NavLink>
                   </p>
                 ) : (

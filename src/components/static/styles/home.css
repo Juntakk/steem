@@ -1,6 +1,6 @@
 .landingPage {
   position: relative;
-  background-image: url("../../../../public/images/bg5.png");
+  background-image: url("../../../../src/images/bg5.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -10,12 +10,7 @@
   .overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.6
-    ); // Adds a dark overlay for better text readability
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;

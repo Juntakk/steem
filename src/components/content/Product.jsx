@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
-import styles from "./styles/Product.module.scss";
+import "./styles/product.css";
+import { useMemo } from "react";
+import React from "react";
 
 export const Product = ({
   image,
@@ -11,30 +13,34 @@ export const Product = ({
   game,
   wishList,
 }) => {
-  const isGameWishListed = () => {
+  const isGameWishListed = useMemo(() => {
     return wishList.some((item) => item._id === game._id);
-  };
+  }, [wishList, game._id]);
 
   return (
-    <div className={styles.productCard}>
-      <NavLink to={`/games/${_id}`} className={styles.link}>
-        <div className={styles.imageContainer}>
-          <img className={styles.image} src={image} alt={name} />
+    <div className="productCard">
+      <NavLink to={`/games/${_id}`} className="link">
+        <div className="imageContainer">
+          <img className="image" src={image} alt={name} />
         </div>
       </NavLink>
-      <div className={styles.textContainer}>
-        <h2 className={styles.name}>{name}</h2>
-        <h3 className={styles.category}>{category}</h3>
-        <div className={styles.price}>
+      <div className="textContainer">
+        <h2 className="name">{name}</h2>
+        <h3 className="category">{category}</h3>
+        <div className="price">
           <span>${price}</span>
         </div>
         <button
-          className={`${styles.addToWishListButton} ${
-            isGameWishListed() ? styles.inWishlist : ""
+          className={`addToWishListButton ${
+            isGameWishListed ? "inWishlist" : ""
           }`}
           onClick={() => addToWishList(game)}
+          aria-label={
+            isGameWishListed ? "Remove from Wishlist" : "Add to Wishlist"
+          }
+          aria-live="polite"
         >
-          {isGameWishListed() ? "Already in Wishlist" : "Add to Wishlist"}
+          {isGameWishListed ? "Already in Wishlist" : "Add to Wishlist"}
         </button>
       </div>
     </div>

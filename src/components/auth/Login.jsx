@@ -1,7 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 import { useState } from "react";
-import styles from "./styles/auth.module.scss";
+import "./styles/auth.css"; // Assuming your CSS file is now auth.css
+import React from "react";
 
 export const Login = () => {
   const { login } = useAuth();
@@ -16,12 +17,12 @@ export const Login = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <h2 className={styles.title}>Welcome Back</h2>
-        <p className={styles.subtitle}>Log in to your account</p>
-        <div className={styles.inputGroup}>
-          <label htmlFor="email" className={styles.label}>
+    <div className="container">
+      <form onSubmit={handleSubmit} className="form">
+        <h2 className="title">Welcome Back</h2>
+        <p className="subtitle">Log in to your account</p>
+        <div className="inputGroup">
+          <label htmlFor="email" className="label">
             Email Address
           </label>
           <input
@@ -29,12 +30,12 @@ export const Login = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={styles.input}
+            className="input"
             required
           />
         </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="password" className={styles.label}>
+        <div className="inputGroup">
+          <label htmlFor="password" className="label">
             Password
           </label>
           <input
@@ -42,16 +43,16 @@ export const Login = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className={styles.input}
+            className="input"
             required
           />
         </div>
-        <button type="submit" className={styles.button}>
+        <button type="submit" className="button">
           Log In
         </button>
-        <div className={styles.footer}>
+        <div className="footer">
           <span>Don't have an account? </span>
-          <NavLink to={"/register"} className={styles.link}>
+          <NavLink to={"/register"} className="link">
             Sign Up
           </NavLink>
         </div>

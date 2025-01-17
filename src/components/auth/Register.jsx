@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../../contexts/authContext";
-import styles from "./styles/auth.module.scss";
+import "./styles/auth.css"; // Assuming your CSS file is now auth.css
+import React from "react";
 
 const Register = () => {
   const { login } = useAuth();
@@ -30,61 +31,59 @@ const Register = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <form onSubmit={handleSubmit(submit)} className={styles.form}>
-        <h2 className={styles.title}>Create Account</h2>
-        <p className={styles.subtitle}>Sign up to start your journey</p>
-        <div className={styles.inputGroup}>
-          <label htmlFor="name" className={styles.label}>
+    <div className="container">
+      <form onSubmit={handleSubmit(submit)} className="form">
+        <h2 className="title">Create Account</h2>
+        <p className="subtitle">Sign up to start your journey</p>
+        <div className="inputGroup">
+          <label htmlFor="name" className="label">
             Full Name
           </label>
           <input
             type="text"
             id="name"
             {...register("name")}
-            className={styles.input}
+            className="input"
             required
           />
-          {errors.name && (
-            <span className={styles.error}>{errors.name.message}</span>
-          )}
+          {errors.name && <span className="error">{errors.name.message}</span>}
         </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="email" className={styles.label}>
+        <div className="inputGroup">
+          <label htmlFor="email" className="label">
             Email Address
           </label>
           <input
             type="email"
             id="email"
             {...register("email")}
-            className={styles.input}
+            className="input"
             required
           />
           {errors.email && (
-            <span className={styles.error}>{errors.email.message}</span>
+            <span className="error">{errors.email.message}</span>
           )}
         </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="password" className={styles.label}>
+        <div className="inputGroup">
+          <label htmlFor="password" className="label">
             Password
           </label>
           <input
             type="password"
             id="password"
             {...register("password")}
-            className={styles.input}
+            className="input"
             required
           />
           {errors.password && (
-            <span className={styles.error}>{errors.password.message}</span>
+            <span className="error">{errors.password.message}</span>
           )}
         </div>
-        <button type="submit" className={styles.button}>
+        <button type="submit" className="button">
           Sign Up
         </button>
-        <div className={styles.footer}>
+        <div className="footer">
           <span>Already have an account? </span>
-          <NavLink to={"/login"} className={styles.link}>
+          <NavLink to={"/login"} className="link">
             Log In
           </NavLink>
         </div>

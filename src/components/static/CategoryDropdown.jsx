@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import styles from "./styles/DropDown.module.scss";
+import "./styles/dropDown.css"; // Assuming your CSS file is now DropDown.css
+import React from "react";
 
 export const CategoryDropdown = ({ onCategoryChange }) => {
   const [selectedCat, setSelectedCat] = useState("all");
@@ -13,13 +14,13 @@ export const CategoryDropdown = ({ onCategoryChange }) => {
   };
 
   return (
-    <div className={styles.catDropDown}>
-      <label htmlFor="category-select" className={styles.dropdownLabel}>
+    <div className="catDropDown">
+      <label htmlFor="category-select" className="dropdownLabel">
         Category
       </label>
       <select
         id="category-select"
-        className={styles.customSelect}
+        className="customSelect"
         name="Categories"
         value={selectedCat}
         onChange={handleSelectedCat}

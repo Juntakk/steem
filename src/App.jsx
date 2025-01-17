@@ -68,50 +68,48 @@ function App() {
 
   return (
     <>
-      <div className={styles.app}>
-        <main>
-          <Header wishedItems={wishedItems} />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/games"
-              element={
-                <Content
-                  games={games}
-                  setGames={setGames}
-                  addToWishList={addToWishList}
-                  wishList={wishList}
-                  setIsWishListed={setIsWishListed}
-                  isWishListed={isWishListed}
-                />
-              }
-            />
-            <Route
-              path="/wishlist"
-              element={
-                <WishList
-                  wishList={wishList}
-                  removeFromWishList={removeFromWishList}
-                />
-              }
-            />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/games/:id"
-              element={
-                <GameDetails
-                  addToWishList={addToWishList}
-                  removeFromWishList={removeFromWishList}
-                  wishList={wishList}
-                  games={games}
-                />
-              }
-            />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-      </div>
+      <main>
+        <Header wishedItems={wishedItems} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/games"
+            element={
+              <Content
+                games={games}
+                setGames={setGames}
+                addToWishList={addToWishList}
+                wishList={wishList}
+                setIsWishListed={setIsWishListed}
+                isWishListed={isWishListed}
+              />
+            }
+          />
+          <Route
+            path="/wishlist"
+            element={
+              <WishList
+                wishList={wishList}
+                removeFromWishList={removeFromWishList}
+              />
+            }
+          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/games/:id"
+            element={
+              <GameDetails
+                addToWishList={addToWishList}
+                removeFromWishList={removeFromWishList}
+                wishList={wishList}
+                games={games}
+              />
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </>
   );
 }

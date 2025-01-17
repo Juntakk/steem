@@ -19,16 +19,20 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
-        use: [
-          "style-loader", // Injects styles into the DOM
-          "css-loader", // Turns CSS into CommonJS
-          "sass-loader", // Compiles Sass to CSS
-        ],
-      },
-      {
         test: /\.module\.scss$/,
-        use: ["style-loader", "css-loader?modules", "sass-loader"],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: "[name]__[local]--[hash:base64:5]", // Customize as needed
+              },
+            },
+          },
+          "sass-loader",
+        ],
       },
       {
         test: /\.css$/, // Handle CSS files

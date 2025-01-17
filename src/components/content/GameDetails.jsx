@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
-import styles from "./styles/GameDetails.module.scss";
+import "./styles/gameDetails.css";
+import React from "react";
 
 export const GameDetails = ({ addToWishList, games, wishList }) => {
   const params = useParams();
@@ -15,36 +16,43 @@ export const GameDetails = ({ addToWishList, games, wishList }) => {
   return (
     <>
       {!game ? (
-        <div className={styles.loadingContainer}>
-          <h2 className={styles.loadingText}>
+        <div className="loadingContainer">
+          <h2 className="loadingText">
             Sorry, we're currently resolving deployment issues.
           </h2>
         </div>
       ) : (
-        <div className={styles.gameDetailsContainer}>
+        <div className="gameDetailsContainer">
           <button
-            className={styles.backButton}
+            className="backButton"
             onClick={() => navigate("/games")}
+            aria-label="Back to game store"
           >
             Back to Store
           </button>
-          <div className={styles.gameDetails}>
-            <div className={styles.gameImageContainer}>
+          <div className="gameDetails">
+            <div className="gameImageContainer">
               <img
-                className={styles.gameImage}
+                className="gameImage"
                 src={game.image}
                 alt={game.name}
+                loading="lazy"
               />
             </div>
-            <div className={styles.gameInfo}>
-              <h2 className={styles.gameName}>{game.name}</h2>
-              <p className={styles.gameDescription}>{game.description}</p>
-              <p className={styles.gamePrice}>{game.price}</p>
+            <div className="gameInfo">
+              <h2 className="gameName">{game.name}</h2>
+              <p className="gameDescription">{game.description}</p>
+              <p className="gamePrice">{game.price}</p>
               <button
-                className={`${styles.addToWishListButton} ${
-                  isGameWishListed() ? styles.inWishlist : ""
+                className={`addToWishListButton ${
+                  isGameWishListed() ? "inWishlist" : ""
                 }`}
                 onClick={() => addToWishList(game)}
+                aria-label={
+                  isGameWishListed()
+                    ? "Remove from Wishlist"
+                    : "Add to Wishlist"
+                }
               >
                 {isGameWishListed() ? "Already in Wishlist" : "Add to Wishlist"}
               </button>
