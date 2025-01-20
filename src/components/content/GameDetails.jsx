@@ -30,7 +30,7 @@ export const GameDetails = ({ addToWishList, games, wishList }) => {
           >
             Back to Store
           </button>
-          <div className="gameDetails">
+          <div className="gameDetailsDetails">
             <div className="gameImageContainer">
               <img
                 className="gameImage"

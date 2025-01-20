@@ -59,17 +59,21 @@
 /* Game details (name and price) */
 .gameDetails {
   display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  flex-grow: 1;
+  flex-direction: row !important; /* Keep elements in a row */
+  justify-content: center;
+  align-items: center; /* Align items to the top */
+  gap: 20px;
+  height: 70vh;
+  max-width: 100%;
+  flex-wrap: wrap;
   max-height: 2rem;
 }
 
 .gameName {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #f39c12;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -79,6 +83,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: #ecf0f1;
+  padding: 1rem;
 }
 
 /* Delete button */

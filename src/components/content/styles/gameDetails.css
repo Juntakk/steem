@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #1a1a2e, #16213e);
   overflow: hidden;
 }
@@ -21,10 +22,10 @@
   background-color: #555;
 }
 
-.gameDetails {
+.gameDetailsDetails {
   display: flex;
   flex-direction: row !important; /* Keep elements in a row */
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center; /* Align items to the top */
   gap: 20px;
   height: 70vh;
@@ -78,7 +79,6 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #f39c12;
-  margin-bottom: 20px;
 }
 
 .addToWishListButton {
