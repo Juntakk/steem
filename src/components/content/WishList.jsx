@@ -1,9 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaCircleXmark } from "react-icons/fa6";
 import "./styles/wishlist.css";
 
-export const WishList = ({ wishList, removeFromWishList }) => {
+export const WishList = ({ wishList, removeFromWishList, total }) => {
+  const navigate = useNavigate();
   return (
     <div className="container">
       <h1 className="title">Your Wishlist</h1>
@@ -30,7 +31,15 @@ export const WishList = ({ wishList, removeFromWishList }) => {
         )}
       </div>
       {wishList.length > 0 && (
-        <button className="paymentButton">Proceed to Payment</button>
+        <>
+          <span className="total">Total: {total} $</span>
+          <button
+            className="paymentButton"
+            onClick={() => navigate("/payment")}
+          >
+            Proceed to Payment
+          </button>
+        </>
       )}
     </div>
   );
