@@ -16,7 +16,9 @@ export const Product = ({
   const isGameWishListed = useMemo(() => {
     return wishList.some((item) => item._id === game._id);
   }, [wishList, game._id]);
+
   const navigate = useNavigate();
+
   return (
     <div className="productCard">
       <NavLink to={`/games/${_id}`} className="link">
@@ -37,10 +39,6 @@ export const Product = ({
           onClick={() =>
             !isGameWishListed ? addToWishList(game) : navigate("/wishlist")
           }
-          aria-label={
-            isGameWishListed ? "Remove from Wishlist" : "Add to Wishlist"
-          }
-          aria-live="polite"
         >
           {isGameWishListed ? "Already in Wishlist" : "Add to Wishlist"}
         </button>

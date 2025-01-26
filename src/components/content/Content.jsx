@@ -1,7 +1,6 @@
 import { Product } from "./Product.jsx";
 import { useState } from "react";
 import { CategoryDropdown } from "../static/CategoryDropdown.jsx";
-import { RingLoader } from "react-spinners";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext.js";
 import "./styles/content.css"; // Update to regular CSS
@@ -11,7 +10,6 @@ export const Content = ({
   games,
   setGames,
   addToWishList,
-  isLoading,
   isWishListed,
   wishList,
   setIsWishListed,
@@ -21,10 +19,14 @@ export const Content = ({
   const { isLoggedIn } = useAuth();
 
   const handleSelectedCat = (selectedCat) => {
-    setSelectedCat(selectedCat);
+    setTimeout(() => {
+      setSelectedCat(selectedCat);
+    }, 300);
   };
   const handleValue = (e) => {
-    setInputValue(e.target.value.toLowerCase().trim());
+    setTimeout(() => {
+      setInputValue(e.target.value.toLowerCase().trim());
+    }, 300);
   };
   const filteredGames =
     selectedCat === "all"
@@ -59,46 +61,24 @@ export const Content = ({
             ""
           )}
           <div className="productContainer">
-            {filteredGames.length > 0 ? (
-              filteredGames.map((item) => (
-                <Product
-                  key={item._id}
-                  name={item.name}
-                  image={item.image}
-                  _id={item._id}
-                  price={item.price}
-                  rating={item.rating}
-                  category={item.category}
-                  games={games}
-                  setGames={setGames}
-                  game={item}
-                  addToWishList={addToWishList}
-                  isWishListed={isWishListed}
-                  setIsWishListed={setIsWishListed}
-                  wishList={wishList}
-                />
-              ))
-            ) : isLoading ? (
-              <div className="loadingText">
-                <p>Loading...</p>
-                <p>This will take about 30 seconds</p>
-                <RingLoader color="rgb(214, 164, 99)" size={100} />
-              </div>
-            ) : (
-              <div className="nogames">
-                <p>No results found.</p>
-                {isLoggedIn ? (
-                  <p>
-                    Add your own game
-                    <NavLink to={"/add-game"}>
-                      <span className="linkToAdd"> here</span>
-                    </NavLink>
-                  </p>
-                ) : (
-                  ""
-                )}
-              </div>
-            )}
+            {filteredGames.map((item) => (
+              <Product
+                key={item._id}
+                name={item.name}
+                image={item.image}
+                _id={item._id}
+                price={item.price}
+                rating={item.rating}
+                category={item.category}
+                games={games}
+                setGames={setGames}
+                game={item}
+                addToWishList={addToWishList}
+                isWishListed={isWishListed}
+                setIsWishListed={setIsWishListed}
+                wishList={wishList}
+              />
+            ))}
           </div>
         </div>
       </div>
