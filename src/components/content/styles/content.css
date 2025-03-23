@@ -1,16 +1,17 @@
+/* Main flex container */
 .flexContainer {
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: column;
   justify-content: flex-start;
   padding: 20px;
   margin: 0 auto;
   max-width: 1200px;
-  height: 100%;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: #f0e4d7;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #22252a, #1c1f26);
+  color: #e0e0e0;
 }
 
+/* Sub container layout */
 .subContainer {
   display: flex;
   flex-direction: row;
@@ -20,102 +21,120 @@
   min-width: 250px;
 }
 
+/* Input fields */
 .inputField {
-  background-color: #444;
-  border: 1px solid #888;
-  color: #f0e4d7;
+  background-color: #33383f;
+  border: 1px solid #5c636e;
+  color: #e0e0e0;
   margin-top: 20px;
   padding: 10px;
   border-radius: 5px;
   width: 100%;
   max-width: 300px;
-  align-self: center;
+  transition: border 0.3s ease;
 }
 
 .inputField::placeholder {
-  color: #ccc;
-}
-a {
-  text-decoration: none;
-}
-.selectCategory {
-  background-color: #444;
-  color: #f0e4d7;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #888;
-  max-width: 300px;
+  color: #b0b0b0;
 }
 
+.inputField:focus {
+  border: 1px solid #a6a6a6;
+  outline: none;
+}
+
+/* Dropdown styling */
+.selectCategory {
+  background-color: #33383f;
+  color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #5c636e;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+/* Store button */
 .storeButton {
-  background-color: #1a202c;
-  color: #f0e4d7;
+  background-color: #2c2f36;
+  color: #e0e0e0;
   padding: 12px 20px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 500;
   transition: background-color 0.3s ease;
 }
 
 .storeButton:hover {
-  background-color: #2b3b4d;
+  background-color: #3a3d45;
 }
 
+/* Messages and links */
 .message {
   font-size: 1.2rem;
   text-align: center;
-  color: #f0e4d7;
-  text-decoration: none;
+  color: #e0e0e0;
 }
 
 .message .login {
-  color: #d1a054;
+  color: #c49b5f;
   text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .message .login:hover {
-  color: #f0e4d7;
+  color: #e0e0e0;
 }
 
+/* Grid container for products */
 .productContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
   width: 100%;
   padding-top: 20px;
   margin-top: 10px;
-  height: 100%;
 }
 
+/* No games message */
 .nogames {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 300px;
-  color: #888;
+  color: #8a8f99;
+  font-weight: 500;
 }
 
+/* Add game link */
 .linkToAdd {
-  color: #d6a465;
+  color: #c49b5f;
   font-weight: bold;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
+.linkToAdd:hover {
+  color: #e0e0e0;
+}
+
+/* Loading text */
 .loadingText {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #8a8f99;
+  font-weight: 500;
 }
 
+/* Responsive design */
 @media screen and (max-width: 768px) {
   .flexContainer {
-    flex-direction: column;
     padding: 10px;
-    height: auto;
   }
 
   .subContainer {

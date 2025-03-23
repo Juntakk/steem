@@ -33,9 +33,6 @@ function App() {
   const [games, setGames] = useState(data);
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
-  const [clientSecret, setClientSecret] = useState(
-    "pi_mock_secret_mocked12345"
-  );
 
   const addToWishList = (game) => {
     if (!isLoggedIn) {

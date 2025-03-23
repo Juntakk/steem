@@ -1,17 +1,19 @@
+/* Centered container with a smooth gradient */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 8.6rem);
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, #22252a, #1c1f26);
   padding: 2rem;
 }
 
+/* Form Styling */
 .form {
   background: #222831;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -19,83 +21,110 @@
   flex-direction: column;
 }
 
+/* Title & Subtitle */
 .title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #ffffff;
+  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   font-size: 1rem;
-  color: #cccccc;
+  color: #b0b0b0;
   margin-bottom: 1.5rem;
 }
 
+/* Input Group */
 .inputGroup {
   margin-bottom: 1rem;
   text-align: left;
 }
 
+/* Label */
 .label {
   font-size: 0.9rem;
-  color: #cccccc;
+  color: #b0b0b0;
   margin-bottom: 0.3rem;
   display: block;
 }
 
+/* Input Field */
 .input {
-  overflow: hidden;
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #393e46;
-  border-radius: 5px;
+  border-radius: 6px;
   background: #393e46;
   color: #ffffff;
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .input:focus {
   outline: none;
   border-color: #00adb5;
-  box-shadow: 0 0 4px #00adb5;
+  box-shadow: 0 0 6px rgba(0, 173, 181, 0.6);
+  background: #2c313a;
 }
 
+/* Error Message */
 .error {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #ff5722;
   margin-top: 0.3rem;
-  display: block;
 }
 
+/* Primary Button */
 .button {
   width: 100%;
   padding: 0.75rem;
   background: #00adb5;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  background: #007e83;
+  background: #008c96;
+  transform: scale(1.02);
 }
 
+/* Footer Text */
 .footer {
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #cccccc;
+  color: #b0b0b0;
 }
 
+/* Links */
 .link {
   color: #00adb5;
   text-decoration: none;
-  margin-left: 0.3rem;
-  transition: color 0.3s ease;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .link:hover {
-  color: #007e83;
+  color: #008c96;
+  text-shadow: 0 0 8px rgba(0, 173, 181, 0.6);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 480px) {
+  .form {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .button {
+    font-size: 0.95rem;
+  }
 }
